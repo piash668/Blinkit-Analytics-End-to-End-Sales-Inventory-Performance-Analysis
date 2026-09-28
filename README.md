@@ -1,133 +1,19 @@
-# Blinkit Grocery Sales Analysis
+Blinkit Analytics: End-to-End Sales & Inventory Performance Analysis
+Project Overview
+This End-to-End Sales & Inventory Performance Analysis Project Overview This end-to-end data analytics project evaluates Blinkit’s sales performance, customer satisfaction, and inventory distribution to identify key growth drivers and operational optimization opportunities.   By unifying data processing in SQL, EDA and data manipulation in Python, and interactive dashboarding in Power BI, the analysis transforms raw retail data into actionable business intelligence.  
 
-A step-by-step data analysis project using Blinkit grocery sales data. The project cleans inconsistent fat-content labels, calculates business KPIs, answers seven analytical questions, and creates visual dashboards with Python.
+📌 Business Objectives & Core KPIsKey Performance Indicators (KPIs)Total Sales: 
+Overall revenue generated across all items and outlets.   Average Sales: Average revenue generated per transaction/sale.   Number of Items: Total volume of distinct items sold.   Average Rating: Mean customer satisfaction rating across products sold.  
 
-## Project Questions and Answers
-
-### Step 1: What are the main business KPIs?
-
-The script calculates:
-
-- **Total Sales:** Overall revenue generated from all items sold.
-- **Average Sales:** Average revenue per sale.
-- **Number of Items:** Number of unique items based on `Item Identifier`.
-- **Average Rating:** Average customer rating.
-
-### Step 2: How does fat content affect sales?
-
-The analysis groups the data by `Item Fat Content` and compares:
-
-- Total Sales
-- Average Sales
-- Number of Items
-- Average Rating
-
-Before analysis, the labels are standardized:
-
-- `LF` becomes `Low Fat`
-- `low fat` becomes `Low Fat`
-- `reg` becomes `Regular`
-
-### Step 3: Which item types perform best?
-
-The analysis groups sales by `Item Type` and `Item Fat Content`. This identifies the strongest item categories and shows how the four KPIs vary between fat-content groups.
-
-### Step 4: How do outlets perform by fat content?
-
-The analysis compares every `Outlet Identifier` by `Item Fat Content`. This shows which outlets generate the most sales for Low Fat and Regular products.
-
-### Step 5: How are sales distributed by outlet establishment year?
-
-The analysis groups sales by `Outlet Establishment Year` to evaluate how outlet age relates to sales performance.
-
-### Step 6: What percentage of sales comes from each outlet size?
-
-For each `Outlet Size`, the script calculates:
-
-```text
-Sales Percentage = Outlet Size Sales / Total Sales * 100
-```
-
-This makes it easy to compare the contribution of Small, Medium, and High outlets.
-
-### Step 7: How do location and outlet type affect performance?
-
-The analysis provides:
-
-- Sales and KPIs by `Outlet Location Type`
-- Total Sales, Average Sales, Number of Items, and Average Rating by `Outlet Type`
-
-## Visual Results
-
-The Python script creates two dashboard images in the `Images` folder.
-
-### Main Sales Dashboard
-
-[Open the main dashboard](Images/Blinkit_Sales_Analysis.png)
-
-This dashboard contains:
-
-1. Total Sales by Fat Content
-2. Total Sales by Item Type and Fat Content
-3. Total Sales by Outlet and Fat Content
-4. Total Sales by Outlet Establishment Year
-
-### Additional Outlet Dashboard
-
-[Open the additional outlet dashboard](Images/Blinkit_Additional_Analysis.png)
-
-This dashboard contains:
-
-1. Percentage of Sales by Outlet Size
-2. Sales by Outlet Location
-3. Total Sales by Outlet Type
-
-## Technologies Used
-
-- Python
-- Pandas
-- Matplotlib
-- CSV data analysis
-
-## How to Run the Project
-
-### 1. Clone the repository
-
-```bash
-git clone <your-github-repository-url>
-cd "Blinkit Project"
-```
-
-### 2. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Run the analysis
-
-```bash
-python Main.py
-```
-
-The script prints the KPI tables in the terminal and saves the visual dashboards to the `Images` folder.
-
-## Project Structure
-
-```text
-Blinkit Project/
-|-- BlinkIT Grocery Data.csv
-|-- Main.py
-|-- requirements.txt
-|-- README.md
-|-- Images/
-|   |-- Blinkit_Sales_Analysis.png
-|   |-- Blinkit_Additional_Analysis.png
-|-- SQLQuery_of_Blinkit.sql
-```
-
-## Notes
-
-- The CSV file must remain in the same folder as `Main.py`.
-- The script uses a path relative to `Main.py`, so it can be run from another working directory.
-- The SQL file contains equivalent analysis queries for a database version of the project.
+🔍 Key Analytical DimensionsFat Content Analysis: 
+Evaluates total sales and metrics across item fat content categories (Low Fat vs. Regular).   Item Type Performance: Segmented analysis of revenue, item count, and customer ratings by product category.   Outlet Establishment & Age: Analyzes sales trends based on the age and establishment year of retail outlets.   Outlet Size Correlation: Assesses percentage contribution to total sales by physical store size (Small, Medium, High). 
+Geographic Distribution: Evaluates regional revenue distribution across Tier 1, Tier 2, and Tier 3 location types.   
+Comprehensive Outlet Type Analysis: Evaluates key metrics across store formats (Supermarket Type 1, Type 2, Type 3, and Grocery Stores).   
+🛠️ Technology Stack & Implementation1.
+1.Data Engineering & Transformation (SQL)Querying database tables using aggregate functions (SUM, AVG, COUNT).   
+Window functions (OVER(PARTITION BY...)) to calculate percentage sales contributions across outlet sizes and locations. 
+Segmenting metrics using GROUP BY and CASE statements.   
+2. Exploratory Data Analysis & Visualization (Python)Data Cleansing & Wrangling: Handled missing values and standardized data attributes using pandas and numpy.Visualizations: Created distributions and correlation plots using matplotlib and seaborn to detect trends in customer ratings and product sales across store tiers.
+3. Interactive Business Intelligence (Power BI)DAX Measures: 
+Calculated dynamic metrics for Total Revenue, Average Order Value, and Percentage Sales Share.  
+Visual Dashboards: Built interactive drill-down views using donut charts, bar plots, matrix grids, and KPI cards for executive decision-making. 
